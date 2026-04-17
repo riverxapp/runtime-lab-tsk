@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me - Chirag Dodiya</title>
+  <meta name="description" content="About Chirag Dodiya, a senior software engineer building modern, reliable, and scalable digital experiences." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #60a5fa;
+      --accent-2: #22c55e;
+      --border: rgba(148, 163, 184, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #0b1220 0%, #111827 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+      background: rgba(15, 23, 42, 0.82);
+      border-bottom: 1px solid var(--border);
+      z-index: 10;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 0;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.05rem;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 18px;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      color: #fff;
+    }
+
+    main {
+      padding: 72px 0 88px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--accent);
+      background: rgba(96, 165, 250, 0.08);
+      font-size: 0.9rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2.4rem, 6vw, 4.6rem);
+      line-height: 1.05;
+    }
+
+    .lead {
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 62ch;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #0f172a;
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .card {
+      background: rgba(17, 24, 39, 0.85);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.24);
+    }
+
+    .profile {
+      display: grid;
+      gap: 20px;
+    }
+
+    .avatar {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(96,165,250,0.28), rgba(34,197,94,0.22));
+      display: grid;
+      place-items: center;
+      font-size: 4rem;
+      font-weight: 800;
+      color: #fff;
+      border: 1px solid var(--border);
+    }
+
+    .meta-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    .meta-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+    }
+
+    .meta-list li:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    section {
+      padding-top: 28px;
+    }
+
+    .section-title {
+      font-size: 1.7rem;
+      margin: 0 0 12px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .feature h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .feature p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 0;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 860px) {
+      .hero,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav a {
+        margin-left: 0;
+        margin-right: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Chirag Dodiya</a>
+      <nav aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="about">
+    <div class="container">
+      <div class="hero">
+        <div>
+          <span class="eyebrow">About Me</span>
+          <h1>Senior Software Engineer building thoughtful digital products.</h1>
+          <p class="lead">
+            Hi, I’m Chirag Dodiya. I specialize in creating scalable, maintainable, and user-focused web experiences.
+            My background blends strong engineering fundamentals with a practical product mindset, helping teams ship
+            reliable software faster.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#contact">Let’s Connect</a>
+            <a class="btn btn-secondary" href="#skills">View My Skills</a>
+          </div>
+        </div>
+
+        <aside class="card profile" aria-label="Profile summary">
+          <div class="avatar" aria-hidden="true">CD</div>
+          <ul class="meta-list">
+            <li><strong>Name</strong><span>Chirag Dodiya</span></li>
+            <li><strong>Role</strong><span>Senior Software Engineer</span></li>
+            <li><strong>Focus</strong><span>Web apps, systems, and product engineering</span></li>
+            <li><strong>Location</strong><span>Available for remote opportunities</span></li>
+          </ul>
+        </aside>
+      </div>
+
+      <section aria-labelledby="story">
+        <h2 id="story" class="section-title">My Story</h2>
+        <div class="card">
+          <p>
+            I enjoy turning complex requirements into clean, intuitive solutions. Over the years, I’ve worked across
+            frontend and backend development, collaborating with designers, product managers, and stakeholders to build
+            applications that are fast, dependable, and easy to use.
+          </p>
+          <p>
+            My approach is simple: understand the problem deeply, keep the architecture practical, and deliver
+            high-quality code with a focus on long-term maintainability.
+          </p>
+        </div>
+      </section>
+
+      <section id="skills" aria-labelledby="skills-title">
+        <h2 id="skills-title" class="section-title">Core Skills</h2>
+        <div class="grid">
+          <article class="card feature">
+            <h3>Frontend Development</h3>
+            <p>Building responsive, accessible interfaces with strong attention to detail and user experience.</p>
+          </article>
+          <article class="card feature">
+            <h3>Backend & APIs</h3>
+            <p>Designing reliable services, clean integrations, and scalable application logic.</p>
+          </article>
+          <article class="card feature">
+            <h3>Problem Solving</h3>
+            <p>Breaking down challenging technical problems into simple, practical implementation plans.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title" class="section-title">Let’s Work Together</h2>
+        <div class="card">
+          <p>
+            If you’re looking for a senior engineer to help build or improve a product, I’d love to connect.
+            I’m open to exciting opportunities and collaborative projects.
+          </p>
+          <p>
+            <a class="btn btn-primary" href="mailto:chirag.dodiya@example.com">Email Me</a>
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Chirag Dodiya. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
