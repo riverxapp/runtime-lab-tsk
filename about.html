@@ -23,7 +23,9 @@
   <header class="sticky top-0 z-40 border-b border-white/20 bg-white/70 backdrop-blur-xl dark:border-slate-800/60 dark:bg-slate-950/70">
     <nav>
       <div class="mx-auto flex w-full max-w-[1600px] items-center justify-between px-4 py-4 sm:px-6">
-        <a href="index.html" class="brand text-xl font-semibold tracking-wide focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">Chirag Dodiya</a>
+        <a href="#hero" class="flex items-center gap-3 transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
+          <span class="brand text-xl font-semibold tracking-wide text-slate-900 dark:text-slate-100">Chirag Dodiya</span>
+        </a>
         <button id="nav-toggle" aria-controls="primary-navigation" aria-expanded="false" class="md:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500" aria-label="Toggle menu">
           <svg class="h-6 w-6 fill-current text-gray-700 dark:text-gray-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
@@ -32,6 +34,14 @@
           <a href="about.html" class="text-blue-600 hover:text-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">About</a>
           <a href="index.html#skills" class="text-gray-600 hover:text-blue-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">Skills</a>
           <a href="index.html#contact" class="text-gray-600 hover:text-blue-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">Contact</a>
+          <button id="dark-mode-toggle" aria-label="Toggle dark mode" class="ml-4 rounded p-1 hover:bg-slate-200 dark:hover:bg-slate-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 transition">
+            <svg id="dark-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" hidden>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m8.485-8.485h-1M4.515 12h-1m15.364 4.95l-.707-.707M6.343 6.343l-.707-.707m12.728 12.728l-.707-.707M6.343 17.657l-.707-.707M12 7a5 5 0 000 10 5 5 0 000-10z" />
+            </svg>
+            <svg id="light-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" hidden>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+            </svg>
+          </button>
         </nav>
       </div>
     </nav>
@@ -43,14 +53,38 @@
         navToggle.setAttribute('aria-expanded', !expanded);
         primaryNav.classList.toggle('hidden');
       });
+      // Dark mode toggle
+      const darkModeToggle = document.getElementById('dark-mode-toggle');
+      const darkIcon = document.getElementById('dark-icon');
+      const lightIcon = document.getElementById('light-icon');
+      function updateDarkModeIcon() {
+        if(document.documentElement.classList.contains('dark')) {
+          darkIcon.hidden = false;
+          lightIcon.hidden = true;
+        } else {
+          darkIcon.hidden = true;
+          lightIcon.hidden = false;
+        }
+      }
+      darkModeToggle.addEventListener('click', () => {
+        if(document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+        }
+        updateDarkModeIcon();
+      });
+      updateDarkModeIcon();
     </script>
   </header>
 
-  <main class="flex-grow container mx-auto px-4 py-12 max-w-4xl">
-    <section id="about" aria-labelledby="about-heading" class="mb-12">
-      <h1 id="about-heading" class="text-4xl font-bold text-slate-900 dark:text-slate-100 mb-6">About Me</h1>
-      <div class="prose max-w-none text-lg text-gray-700 dark:text-gray-300">
-        <p class="mb-4">
+  <main class="flex-grow container mx-auto px-6 py-16 max-w-5xl">
+    <section id="about" aria-labelledby="about-heading" class="mb-16">
+      <h1 id="about-heading" class="text-5xl font-extrabold leading-tight text-slate-900 dark:text-slate-100 mb-8 tracking-tight">About Me</h1>
+      <div class="prose prose-slate max-w-none text-lg text-gray-700 dark:text-gray-300">
+        <p>
           Hello! I'm Chirag Dodiya, a Senior Software Engineer passionate about building impactful and scalable web applications.
           With years of experience in full-stack development, I specialize in creating clean, efficient, and user-centric solutions that drive business value.
         </p>
@@ -60,9 +94,9 @@
       </div>
     </section>
 
-    <section id="skills" aria-labelledby="skills-heading" class="mb-12">
-      <h2 id="skills-heading" class="text-3xl font-semibold text-slate-900 dark:text-slate-100 mb-6">Skills</h2>
-      <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
+    <section id="skills" aria-labelledby="skills-heading" class="mb-16">
+      <h2 id="skills-heading" class="text-3xl font-semibold text-slate-900 dark:text-slate-100 mb-8 tracking-wide">Skills</h2>
+      <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-3 text-lg">
         <li>JavaScript (ES6+), TypeScript</li>
         <li>React.js, Next.js</li>
         <li>Node.js, Express</li>
@@ -73,19 +107,19 @@
       </ul>
     </section>
 
-    <section id="contact" aria-labelledby="contact-heading">
-      <h2 id="contact-heading" class="text-3xl font-semibold text-slate-900 dark:text-slate-100 mb-6">Get in Touch</h2>
-      <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+    <section id="contact" aria-labelledby="contact-heading" class="mb-8">
+      <h2 id="contact-heading" class="text-3xl font-semibold text-slate-900 dark:text-slate-100 mb-6 tracking-wide">Get in Touch</h2>
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
         Interested in working together or have any questions? Feel free to reach out!
       </p>
-      <a href="mailto:chirag@example.com" class="inline-block rounded bg-blue-600 px-6 py-3 text-white font-semibold transition hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
+      <a href="mailto:chirag@example.com" class="inline-block rounded bg-blue-600 px-8 py-4 text-white font-semibold transition hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
         Email Me
       </a>
     </section>
   </main>
 
-  <footer class="mt-auto border-t border-gray-300 bg-white/70 backdrop-blur-md dark:border-gray-700 dark:bg-gray-900/70 py-6">
-    <div class="container mx-auto px-4 text-center text-sm text-gray-600 dark:text-gray-400">
+  <footer class="mt-auto border-t border-white/20 bg-white/70 backdrop-blur-xl dark:border-slate-800/60 dark:bg-slate-950/70 py-6">
+    <div class="container mx-auto px-6 text-center text-sm text-gray-600 dark:text-gray-400">
       &copy; 2024 Chirag Dodiya. All rights reserved.
     </div>
   </footer>
