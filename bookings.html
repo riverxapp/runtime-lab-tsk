@@ -21,100 +21,153 @@
 </head>
 <body class="min-h-screen bg-gradient-to-br from-slate-100 via-white to-blue-50 text-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 dark:text-slate-100 flex flex-col">
   <header class="sticky top-0 z-40 border-b border-white/20 bg-white/70 backdrop-blur-xl dark:border-slate-800/60 dark:bg-slate-950/70">
-    <nav>
+    <nav aria-label="Primary">
       <div class="mx-auto flex w-full max-w-[1600px] items-center justify-between px-4 py-4 sm:px-6">
-        <a href="index.html" class="flex items-center gap-3 text-xl font-semibold tracking-wide transition hover:opacity-90">
-          Chirag Dodiya
+        <a href="index.html#hero" class="flex items-center gap-3 transition hover:opacity-90">
+          <span class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-900 text-sm font-bold text-white shadow-lg shadow-slate-900/20 ring-1 ring-white/10 dark:bg-white dark:text-slate-900">CD</span>
+          <div>
+            <span class="block text-lg font-semibold tracking-wide text-slate-900 dark:text-slate-100">Chirag Dodiya</span>
+            <span class="block text-xs text-slate-500 dark:text-slate-400">Senior Software Engineer</span>
+          </div>
         </a>
-        <ul class="hidden md:flex gap-6 text-slate-700 dark:text-slate-300 text-sm font-medium">
-          <li><a href="index.html" class="hover:text-blue-600 dark:hover:text-blue-400">Home</a></li>
-          <li><a href="about.html" class="hover:text-blue-600 dark:hover:text-blue-400">About</a></li>
-          <li><a href="bookings.html" aria-current="page" class="font-semibold text-blue-600 dark:text-blue-400">Book</a></li>
+        <ul class="hidden items-center gap-6 text-sm font-medium text-slate-700 dark:text-slate-300 md:flex">
+          <li><a href="index.html#hero" class="transition hover:text-blue-600 dark:hover:text-blue-400">Home</a></li>
+          <li><a href="about.html" class="transition hover:text-blue-600 dark:hover:text-blue-400">About</a></li>
+          <li><a href="index.html#contact" class="transition hover:text-blue-600 dark:hover:text-blue-400">Contact</a></li>
+          <li><a href="bookings.html" aria-current="page" class="rounded-full bg-blue-600 px-4 py-2 font-semibold text-white shadow-md shadow-blue-600/20 transition hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400">Book a Call</a></li>
         </ul>
       </div>
     </nav>
   </header>
 
-  <main class="flex-grow w-full max-w-4xl mx-auto px-6 py-12 sm:px-12 lg:py-20">
-    <section aria-labelledby="booking-hero-title" class="mb-16 text-center">
-      <h1 id="booking-hero-title" class="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl">
-        Schedule a Meeting with Chirag Dodiya
-      </h1>
-      <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-700 dark:text-slate-300">
-        Select a date and time to discuss your project, get expert advice, or start collaborating.
-      </p>
-    </section>
+  <main class="flex-grow">
+    <section class="mx-auto w-full max-w-[1600px] px-4 py-16 sm:px-6 lg:py-24">
+      <div class="grid items-start gap-10 lg:grid-cols-[1.15fr_0.85fr]">
+        <div class="space-y-8">
+          <div class="inline-flex items-center gap-2 rounded-full border border-blue-200/70 bg-white/80 px-4 py-2 text-sm font-medium text-blue-700 shadow-sm shadow-blue-100/50 backdrop-blur dark:border-blue-500/20 dark:bg-slate-900/80 dark:text-blue-300">
+            <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+            Booking & consultation
+          </div>
 
-    <section aria-labelledby="appointment-form-title" class="bg-white dark:bg-slate-900 rounded-2xl shadow-md p-8 max-w-3xl mx-auto">
-      <h2 id="appointment-form-title" class="text-2xl font-semibold text-slate-900 dark:text-slate-100 mb-6">Book Your Appointment</h2>
+          <div class="space-y-5">
+            <h1 id="booking-hero-title" class="max-w-3xl text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl">
+              Schedule a meeting with Chirag Dodiya
+            </h1>
+            <p class="max-w-2xl text-lg leading-8 text-slate-700 dark:text-slate-300">
+              Book a discovery call to discuss your product idea, app design needs, Bubble development support, or long-term collaboration.
+            </p>
+          </div>
 
-      <form id="bookingForm" class="space-y-6" aria-describedby="form-note">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div>
-            <label for="name" class="block text-sm font-medium text-slate-700 dark:text-slate-300">Full Name</label>
-            <input type="text" id="name" name="name" required autocomplete="name" 
-                   class="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-slate-800 py-2 px-3 text-slate-900 dark:text-slate-100 shadow-sm placeholder:text-slate-400 focus:border-blue-500 focus:ring focus:ring-blue-300 focus:ring-opacity-50" />
+          <div class="grid gap-4 sm:grid-cols-3">
+            <div class="rounded-2xl border border-white/60 bg-white/80 p-5 shadow-lg shadow-slate-200/50 backdrop-blur dark:border-slate-800/70 dark:bg-slate-900/80 dark:shadow-slate-950/40">
+              <p class="text-sm font-medium text-slate-500 dark:text-slate-400">Availability</p>
+              <p class="mt-2 text-lg font-semibold text-slate-900 dark:text-white">Mon–Fri</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Flexible time slots</p>
+            </div>
+            <div class="rounded-2xl border border-white/60 bg-white/80 p-5 shadow-lg shadow-slate-200/50 backdrop-blur dark:border-slate-800/70 dark:bg-slate-900/80 dark:shadow-slate-950/40">
+              <p class="text-sm font-medium text-slate-500 dark:text-slate-400">Session type</p>
+              <p class="mt-2 text-lg font-semibold text-slate-900 dark:text-white">Strategy / Build</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Tailored to your goals</p>
+            </div>
+            <div class="rounded-2xl border border-white/60 bg-white/80 p-5 shadow-lg shadow-slate-200/50 backdrop-blur dark:border-slate-800/70 dark:bg-slate-900/80 dark:shadow-slate-950/40">
+              <p class="text-sm font-medium text-slate-500 dark:text-slate-400">Response</p>
+              <p class="mt-2 text-lg font-semibold text-slate-900 dark:text-white">Within 1 day</p>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Confirmation by email</p>
+            </div>
           </div>
-          <div>
-            <label for="email" class="block text-sm font-medium text-slate-700 dark:text-slate-300">Email Address</label>
-            <input type="email" id="email" name="email" required autocomplete="email" 
-                   class="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-slate-800 py-2 px-3 text-slate-900 dark:text-slate-100 shadow-sm placeholder:text-slate-400 focus:border-blue-500 focus:ring focus:ring-blue-300 focus:ring-opacity-50" />
-          </div>
-          <div>
-            <label for="phone" class="block text-sm font-medium text-slate-700 dark:text-slate-300">Phone Number</label>
-            <input type="tel" id="phone" name="phone" autocomplete="tel" 
-                   class="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-slate-800 py-2 px-3 text-slate-900 dark:text-slate-100 shadow-sm placeholder:text-slate-400 focus:border-blue-500 focus:ring focus:ring-blue-300 focus:ring-opacity-50" />
-          </div>
-          <div>
-            <label for="service" class="block text-sm font-medium text-slate-700 dark:text-slate-300">Service</label>
-            <select id="service" name="service" required 
-                    class="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-slate-800 py-2 px-3 text-slate-900 dark:text-slate-100 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-300 focus:ring-opacity-50">
-              <option value="" disabled selected>Select a service</option>
-              <option value="app-design">App Design & Prototyping</option>
-              <option value="app-development">Bubble App Development</option>
-              <option value="consultation">Consultation & Strategy</option>
-            </select>
+
+          <div class="flex flex-wrap gap-4">
+            <a href="#booking-form" class="inline-flex items-center justify-center rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:-translate-y-0.5 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400">
+              Reserve your time
+            </a>
+            <a href="index.html#contact" class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white/80 px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-blue-300 hover:text-blue-700 dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-200 dark:hover:border-blue-500 dark:hover:text-blue-300">
+              Prefer to contact first?
+            </a>
           </div>
         </div>
 
-        <fieldset class="mt-6">
-          <legend class="text-sm font-medium text-slate-700 dark:text-slate-300 mb-3">Select a Date</legend>
-          <div id="calendar" class="grid grid-cols-7 gap-2 text-center text-sm" role="list" aria-label="Available dates"></div>
-        </fieldset>
+        <section id="booking-form" aria-labelledby="appointment-form-title" class="rounded-3xl border border-white/60 bg-white/85 p-6 shadow-2xl shadow-slate-200/60 backdrop-blur dark:border-slate-800/70 dark:bg-slate-900/85 dark:shadow-slate-950/50 sm:p-8">
+          <div class="mb-6">
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">Book now</p>
+            <h2 id="appointment-form-title" class="mt-2 text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Book your appointment</h2>
+            <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
+              Choose a date and time that works for you. I’ll follow up with a confirmation and next steps.
+            </p>
+          </div>
 
-        <fieldset class="mt-4">
-          <legend class="text-sm font-medium text-slate-700 dark:text-slate-300 mb-3">Select a Time Slot</legend>
-          <div id="timeSlots" class="flex flex-wrap gap-3" aria-label="Available time slots"></div>
-        </fieldset>
+          <form id="bookingForm" class="space-y-6" aria-describedby="form-note">
+            <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+              <div>
+                <label for="name" class="block text-sm font-medium text-slate-700 dark:text-slate-300">Full Name</label>
+                <input type="text" id="name" name="name" required autocomplete="name" class="mt-2 block w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 shadow-sm transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/15 dark:border-slate-700 dark:bg-slate-950/60 dark:text-slate-100 dark:placeholder:text-slate-500" />
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-slate-700 dark:text-slate-300">Email Address</label>
+                <input type="email" id="email" name="email" required autocomplete="email" class="mt-2 block w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 shadow-sm transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/15 dark:border-slate-700 dark:bg-slate-950/60 dark:text-slate-100 dark:placeholder:text-slate-500" />
+              </div>
+              <div>
+                <label for="phone" class="block text-sm font-medium text-slate-700 dark:text-slate-300">Phone Number</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" class="mt-2 block w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 shadow-sm transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/15 dark:border-slate-700 dark:bg-slate-950/60 dark:text-slate-100 dark:placeholder:text-slate-500" />
+              </div>
+              <div>
+                <label for="service" class="block text-sm font-medium text-slate-700 dark:text-slate-300">Service</label>
+                <select id="service" name="service" required class="mt-2 block w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 shadow-sm transition focus:border-blue-500 focus:ring-4 focus:ring-blue-500/15 dark:border-slate-700 dark:bg-slate-950/60 dark:text-slate-100">
+                  <option value="" disabled selected>Select a service</option>
+                  <option value="app-design">App Design & Prototyping</option>
+                  <option value="app-development">Bubble App Development</option>
+                  <option value="consultation">Consultation & Strategy</option>
+                </select>
+              </div>
+            </div>
 
-        <div>
-          <label for="notes" class="block text-sm font-medium text-slate-700 dark:text-slate-300">Additional Notes</label>
-          <textarea id="notes" name="notes" rows="3" placeholder="Tell me about your project needs..." 
-                    class="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-slate-800 py-2 px-3 text-slate-900 dark:text-slate-100 shadow-sm placeholder:text-slate-400 focus:border-blue-500 focus:ring focus:ring-blue-300 focus:ring-opacity-50"></textarea>
-        </div>
+            <fieldset class="rounded-2xl border border-slate-200 bg-slate-50/70 p-4 dark:border-slate-800 dark:bg-slate-950/40">
+              <legend class="px-2 text-sm font-semibold text-slate-700 dark:text-slate-300">Select a date</legend>
+              <div id="calendar" class="mt-4 grid grid-cols-7 gap-2 text-center text-sm" role="list" aria-label="Available dates"></div>
+            </fieldset>
 
-        <p id="form-note" class="text-xs text-slate-500 dark:text-slate-400 mt-3">You will receive a confirmation email shortly after booking.</p>
+            <fieldset class="rounded-2xl border border-slate-200 bg-slate-50/70 p-4 dark:border-slate-800 dark:bg-slate-950/40">
+              <legend class="px-2 text-sm font-semibold text-slate-700 dark:text-slate-300">Select a time slot</legend>
+              <div id="timeSlots" class="mt-4 flex flex-wrap gap-3" aria-label="Available time slots"></div>
+            </fieldset>
 
-        <button type="submit" class="mt-6 w-full rounded-lg bg-blue-600 px-6 py-3 text-lg font-semibold text-white hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 focus:ring-opacity-50 dark:focus:ring-blue-600">
-          Confirm Appointment
-        </button>
-      </form>
+            <div>
+              <label for="notes" class="block text-sm font-medium text-slate-700 dark:text-slate-300">Additional Notes</label>
+              <textarea id="notes" name="notes" rows="4" placeholder="Tell me about your project needs, goals, timeline, or any questions you'd like to cover." class="mt-2 block w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 shadow-sm transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/15 dark:border-slate-700 dark:bg-slate-950/60 dark:text-slate-100 dark:placeholder:text-slate-500"></textarea>
+            </div>
+
+            <p id="form-note" class="text-xs leading-5 text-slate-500 dark:text-slate-400">You’ll receive a confirmation email shortly after booking. If your preferred slot isn’t available, please contact me directly.</p>
+
+            <button type="submit" class="inline-flex w-full items-center justify-center rounded-full bg-blue-600 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:-translate-y-0.5 hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-500/20 dark:bg-blue-500 dark:hover:bg-blue-400">
+              Confirm appointment
+            </button>
+          </form>
+        </section>
+      </div>
     </section>
 
-    <section aria-labelledby="trust-title" class="mt-20 max-w-3xl mx-auto text-center">
-      <h3 id="trust-title" class="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-6">Trusted by Leading Brands & Clients</h3>
-      <div class="flex flex-wrap justify-center gap-10 items-center">
-        <img src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg" alt="Tuple logo" class="h-10 grayscale opacity-60" loading="lazy" />
-        <img src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg" alt="Mirage logo" class="h-10 grayscale opacity-60" loading="lazy" />
-        <img src="https://tailwindui.com/img/logos/laravel-logo-gray-400.svg" alt="Laravel logo" class="h-10 grayscale opacity-60" loading="lazy" />
-        <img src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg" alt="StaticKit logo" class="h-10 grayscale opacity-60" loading="lazy" />
-        <img src="https://tailwindui.com/img/logos/statamic-logo-gray-400.svg" alt="Statamic logo" class="h-10 grayscale opacity-60" loading="lazy" />
+    <section aria-labelledby="trust-title" class="mx-auto w-full max-w-[1600px] px-4 pb-16 sm:px-6 lg:pb-24">
+      <div class="rounded-3xl border border-white/60 bg-white/75 p-8 shadow-xl shadow-slate-200/60 backdrop-blur dark:border-slate-800/70 dark:bg-slate-900/80 dark:shadow-slate-950/40">
+        <h3 id="trust-title" class="text-center text-sm font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">Trusted by leading brands & clients</h3>
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-10">
+          <img src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg" alt="Tuple logo" class="h-10 opacity-70 grayscale dark:opacity-60" loading="lazy" />
+          <img src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg" alt="Mirage logo" class="h-10 opacity-70 grayscale dark:opacity-60" loading="lazy" />
+          <img src="https://tailwindui.com/img/logos/laravel-logo-gray-400.svg" alt="Laravel logo" class="h-10 opacity-70 grayscale dark:opacity-60" loading="lazy" />
+          <img src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg" alt="StaticKit logo" class="h-10 opacity-70 grayscale dark:opacity-60" loading="lazy" />
+          <img src="https://tailwindui.com/img/logos/statamic-logo-gray-400.svg" alt="Statamic logo" class="h-10 opacity-70 grayscale dark:opacity-60" loading="lazy" />
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="border-t border-white/20 bg-white/70 backdrop-blur-xl dark:border-slate-800/60 dark:bg-slate-950/70 text-center py-6 mt-20 text-sm text-slate-600 dark:text-slate-400">
-    &copy; 2024 Chirag Dodiya — All rights reserved.
+  <footer class="border-t border-white/20 bg-white/70 backdrop-blur-xl dark:border-slate-800/60 dark:bg-slate-950/70">
+    <div class="mx-auto flex w-full max-w-[1600px] flex-col gap-6 px-4 py-8 text-sm text-slate-600 dark:text-slate-400 sm:px-6 md:flex-row md:items-center md:justify-between">
+      <p>&copy; 2024 Chirag Dodiya — All rights reserved.</p>
+      <div class="flex flex-wrap items-center gap-4">
+        <a href="index.html#hero" class="transition hover:text-blue-600 dark:hover:text-blue-400">Home</a>
+        <a href="about.html" class="transition hover:text-blue-600 dark:hover:text-blue-400">About</a>
+        <a href="index.html#contact" class="transition hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
+      </div>
+    </div>
   </footer>
 
   <script>
@@ -122,7 +175,6 @@
       const calendarEl = document.getElementById('calendar');
       const slotsEl = document.getElementById('timeSlots');
 
-      // Generate next 14 days as selectable dates
       const today = new Date();
       const daysToShow = 14;
 
@@ -140,24 +192,21 @@
 
           const button = document.createElement('button');
           button.type = 'button';
-          button.className = 'rounded-lg p-2 border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 hover:bg-blue-50 dark:hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-slate-900';
+          button.className = 'rounded-xl border border-slate-300 bg-white px-2 py-3 text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-300 hover:bg-blue-50 focus:outline-none focus:ring-4 focus:ring-blue-500/15 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-blue-500 dark:hover:bg-slate-800';
           button.setAttribute('aria-pressed', 'false');
           button.setAttribute('aria-label', `${dayName}, ${d.toLocaleDateString(undefined, { month: 'long', day: 'numeric' })}`);
           button.dataset.date = formatDate(d);
-          button.innerHTML = `<span class="block text-xs">${dayName}</span><span class="block font-semibold">${dayNum}</span>`;
+          button.innerHTML = `<span class="block text-xs font-medium text-slate-500 dark:text-slate-400">${dayName}</span><span class="mt-1 block text-base font-semibold">${dayNum}</span>`;
 
           button.addEventListener('click', () => {
-            // Deselect all
             [...calendarEl.children].forEach(b => {
-              b.classList.remove('bg-blue-600', 'text-white');
-              b.classList.add('bg-white', 'dark:bg-slate-800', 'text-slate-900', 'dark:text-slate-100');
+              b.classList.remove('bg-blue-600', 'text-white', 'border-blue-600');
+              b.classList.add('bg-white', 'dark:bg-slate-900', 'text-slate-900', 'dark:text-slate-100', 'border-slate-300', 'dark:border-slate-700');
               b.setAttribute('aria-pressed', 'false');
             });
-            // Select clicked
-            button.classList.add('bg-blue-600', 'text-white');
-            button.classList.remove('bg-white', 'dark:bg-slate-800', 'text-slate-900', 'dark:text-slate-100');
+            button.classList.add('bg-blue-600', 'text-white', 'border-blue-600');
+            button.classList.remove('bg-white', 'dark:bg-slate-900', 'text-slate-900', 'dark:text-slate-100', 'border-slate-300', 'dark:border-slate-700');
             button.setAttribute('aria-pressed', 'true');
-
             renderTimeSlots(button.dataset.date);
           });
 
@@ -165,7 +214,6 @@
         }
       }
 
-      // Dummy available time slots for simplicity
       const availableSlots = [
         "09:00 AM", "10:00 AM", "11:00 AM", "01:00 PM", "02:00 PM", "03:00 PM", "04:00 PM"
       ];
@@ -177,7 +225,7 @@
           const slotId = `slot-${date}-${time.replace(/[:\s]/g, '')}`;
           const label = document.createElement('label');
           label.htmlFor = slotId;
-          label.className = 'cursor-pointer rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-800 py-2 px-4 text-sm font-medium text-slate-900 dark:text-slate-100 hover:bg-blue-50 dark:hover:bg-blue-900 focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-offset-1 focus-within:ring-offset-white dark:focus-within:ring-offset-slate-900';
+          label.className = 'cursor-pointer rounded-xl border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-300 hover:bg-blue-50 focus-within:ring-4 focus-within:ring-blue-500/15 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-blue-500 dark:hover:bg-slate-800';
 
           const radio = document.createElement('input');
           radio.type = 'radio';
@@ -194,14 +242,12 @@
         });
       }
 
-      // On form submit, simple validation for date and time slot selected
       document.getElementById('bookingForm').addEventListener('submit', e => {
         e.preventDefault();
 
         const selectedDateBtn = [...calendarEl.children].find(b => b.getAttribute('aria-pressed') === 'true');
         if (!selectedDateBtn) {
           alert('Please select a date for your appointment.');
-          selectedDateBtn?.focus();
           return;
         }
 
@@ -213,10 +259,9 @@
 
         alert(`Thank you, ${e.target.name.value}! Your appointment is booked on ${selectedDateBtn.dataset.date} at ${selectedTime.value}. We will contact you shortly.`);
         e.target.reset();
-        // Clear selections
         [...calendarEl.children].forEach(b => {
-          b.classList.remove('bg-blue-600', 'text-white');
-          b.classList.add('bg-white', 'dark:bg-slate-800', 'text-slate-900', 'dark:text-slate-100');
+          b.classList.remove('bg-blue-600', 'text-white', 'border-blue-600');
+          b.classList.add('bg-white', 'dark:bg-slate-900', 'text-slate-900', 'dark:text-slate-100', 'border-slate-300', 'dark:border-slate-700');
           b.setAttribute('aria-pressed', 'false');
         });
         slotsEl.innerHTML = '';
