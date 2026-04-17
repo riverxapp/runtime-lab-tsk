@@ -21,20 +21,20 @@
 </head>
 <body class="min-h-screen bg-gradient-to-br from-slate-100 via-white to-blue-50 text-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 dark:text-slate-100 flex flex-col">
   <header class="sticky top-0 z-40 border-b border-white/20 bg-white/70 backdrop-blur-xl dark:border-slate-800/60 dark:bg-slate-950/70">
-    <nav>
+    <nav aria-label="Primary">
       <div class="mx-auto flex w-full max-w-[1600px] items-center justify-between px-4 py-4 sm:px-6">
-        <a href="#hero" class="flex items-center gap-3 transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
+        <a href="index.html#hero" class="flex items-center gap-3 transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
           <span class="brand text-xl font-semibold tracking-wide text-slate-900 dark:text-slate-100">Chirag Dodiya</span>
         </a>
         <button id="nav-toggle" aria-controls="primary-navigation" aria-expanded="false" class="md:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500" aria-label="Toggle menu">
           <svg class="h-6 w-6 fill-current text-gray-700 dark:text-gray-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
-        <nav id="primary-navigation" aria-label="Primary navigation" class="hidden w-full md:flex md:w-auto md:items-center md:justify-end md:gap-6" role="navigation">
-          <a href="index.html" class="text-gray-600 hover:text-blue-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">Home</a>
-          <a href="about.html" class="text-blue-600 hover:text-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">About</a>
-          <a href="index.html#skills" class="text-gray-600 hover:text-blue-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">Skills</a>
-          <a href="index.html#contact" class="text-gray-600 hover:text-blue-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">Contact</a>
-          <button id="dark-mode-toggle" aria-label="Toggle dark mode" class="ml-4 rounded p-1 hover:bg-slate-200 dark:hover:bg-slate-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 transition">
+        <div id="primary-navigation" class="hidden w-full md:flex md:w-auto md:items-center md:justify-end md:gap-6">
+          <a href="index.html" class="text-gray-600 transition hover:text-blue-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">Home</a>
+          <a href="about.html" aria-current="page" class="text-blue-600 transition hover:text-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">About</a>
+          <a href="index.html#skills" class="text-gray-600 transition hover:text-blue-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">Skills</a>
+          <a href="index.html#contact" class="text-gray-600 transition hover:text-blue-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">Contact</a>
+          <button id="dark-mode-toggle" aria-label="Toggle dark mode" class="ml-4 rounded p-1 transition hover:bg-slate-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:hover:bg-slate-700">
             <svg id="dark-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" hidden>
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m8.485-8.485h-1M4.515 12h-1m15.364 4.95l-.707-.707M6.343 6.343l-.707-.707m12.728 12.728l-.707-.707M6.343 17.657l-.707-.707M12 7a5 5 0 000 10 5 5 0 000-10z" />
             </svg>
@@ -42,7 +42,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
             </svg>
           </button>
-        </nav>
+        </div>
       </div>
     </nav>
     <script>
@@ -57,7 +57,7 @@
       const darkIcon = document.getElementById('dark-icon');
       const lightIcon = document.getElementById('light-icon');
       function updateDarkModeIcon() {
-        if(document.documentElement.classList.contains('dark')) {
+        if (document.documentElement.classList.contains('dark')) {
           darkIcon.hidden = false;
           lightIcon.hidden = true;
         } else {
@@ -66,7 +66,7 @@
         }
       }
       darkModeToggle.addEventListener('click', () => {
-        if(document.documentElement.classList.contains('dark')) {
+        if (document.documentElement.classList.contains('dark')) {
           document.documentElement.classList.remove('dark');
           localStorage.setItem('theme', 'light');
         } else {
@@ -80,48 +80,65 @@
   </header>
 
   <main class="flex-grow">
-    <div class="mx-auto w-full max-w-[1600px] px-4 py-16 sm:px-6 lg:px-8">
-      <section id="about" aria-labelledby="about-heading" class="mb-16">
-        <h1 id="about-heading" class="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl">
-          About Me
-        </h1>
-        <div class="mt-6 max-w-3xl space-y-4 text-lg leading-8 text-slate-700 dark:text-slate-300 sm:text-xl">
-          <p>
-            Hello! I'm Chirag Dodiya, a Senior Software Engineer passionate about building impactful and scalable web applications.
-            With years of experience in full-stack development, I specialize in creating clean, efficient, and user-centric solutions that drive business value.
-          </p>
-          <p>
-            My approach combines technical excellence with thoughtful design to deliver products that users love. I'm particularly interested in performance optimization, accessibility, and creating maintainable codebases.
-          </p>
+    <div class="mx-auto w-full max-w-[1600px] px-4 py-12 sm:px-6 lg:px-8">
+      <section id="about" aria-labelledby="about-heading" class="mb-8">
+        <div class="rounded-3xl border border-white/40 bg-white/70 p-8 shadow-lg shadow-blue-950/5 backdrop-blur-xl dark:border-slate-800/60 dark:bg-slate-900/70 sm:p-10 lg:p-12">
+          <div class="max-w-4xl">
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">About Me</p>
+            <h1 id="about-heading" class="mt-3 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl">
+              Senior Software Engineer focused on thoughtful, scalable web experiences
+            </h1>
+            <div class="mt-6 max-w-3xl space-y-4 text-lg leading-8 text-slate-700 dark:text-slate-300 sm:text-xl">
+              <p>
+                Hello! I'm Chirag Dodiya, a Senior Software Engineer passionate about building impactful and scalable web applications.
+                With years of experience in full-stack development, I specialize in creating clean, efficient, and user-centric solutions that drive business value.
+              </p>
+              <p>
+                My approach combines technical excellence with thoughtful design to deliver products that users love. I'm particularly interested in performance optimization, accessibility, and creating maintainable codebases.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section id="skills" aria-labelledby="skills-heading" class="mb-16">
-        <h2 id="skills-heading" class="text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-100 sm:text-4xl">
-          Skills
-        </h2>
-        <ul class="mt-6 grid gap-4 text-lg leading-8 text-slate-700 dark:text-slate-300 sm:grid-cols-2">
-          <li>JavaScript (ES6+), TypeScript</li>
-          <li>React.js, Next.js</li>
-          <li>Node.js, Express</li>
-          <li>RESTful APIs & GraphQL</li>
-          <li>Tailwind CSS & Responsive Design</li>
-          <li>Unit Testing & TDD</li>
-          <li>CI/CD & DevOps Basics</li>
-        </ul>
-      </section>
+      <div class="grid gap-8 lg:grid-cols-3">
+        <section id="skills" aria-labelledby="skills-heading" class="lg:col-span-2">
+          <div class="rounded-3xl border border-white/40 bg-white/70 p-8 shadow-lg shadow-blue-950/5 backdrop-blur-xl dark:border-slate-800/60 dark:bg-slate-900/70 sm:p-10">
+            <div class="flex items-end justify-between gap-4">
+              <div>
+                <p class="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">Core Expertise</p>
+                <h2 id="skills-heading" class="mt-3 text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-100 sm:text-4xl">
+                  Skills
+                </h2>
+              </div>
+            </div>
+            <ul class="mt-8 grid gap-4 sm:grid-cols-2">
+              <li class="rounded-2xl border border-slate-200/70 bg-slate-50/80 px-5 py-4 text-base leading-7 text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-slate-700/70 dark:bg-slate-800/70 dark:text-slate-200">JavaScript (ES6+), TypeScript</li>
+              <li class="rounded-2xl border border-slate-200/70 bg-slate-50/80 px-5 py-4 text-base leading-7 text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-slate-700/70 dark:bg-slate-800/70 dark:text-slate-200">React.js, Next.js</li>
+              <li class="rounded-2xl border border-slate-200/70 bg-slate-50/80 px-5 py-4 text-base leading-7 text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-slate-700/70 dark:bg-slate-800/70 dark:text-slate-200">Node.js, Express</li>
+              <li class="rounded-2xl border border-slate-200/70 bg-slate-50/80 px-5 py-4 text-base leading-7 text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-slate-700/70 dark:bg-slate-800/70 dark:text-slate-200">RESTful APIs & GraphQL</li>
+              <li class="rounded-2xl border border-slate-200/70 bg-slate-50/80 px-5 py-4 text-base leading-7 text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-slate-700/70 dark:bg-slate-800/70 dark:text-slate-200">Tailwind CSS & Responsive Design</li>
+              <li class="rounded-2xl border border-slate-200/70 bg-slate-50/80 px-5 py-4 text-base leading-7 text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-slate-700/70 dark:bg-slate-800/70 dark:text-slate-200">Unit Testing & TDD</li>
+              <li class="rounded-2xl border border-slate-200/70 bg-slate-50/80 px-5 py-4 text-base leading-7 text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-slate-700/70 dark:bg-slate-800/70 dark:text-slate-200">CI/CD & DevOps Basics</li>
+            </ul>
+          </div>
+        </section>
 
-      <section id="contact" aria-labelledby="contact-heading" class="mb-8">
-        <h2 id="contact-heading" class="text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-100 sm:text-4xl">
-          Get in Touch
-        </h2>
-        <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-700 dark:text-slate-300 sm:text-xl">
-          Interested in working together or have any questions? Feel free to reach out!
-        </p>
-        <a href="mailto:chirag@example.com" class="mt-8 inline-flex items-center rounded-full bg-blue-600 px-8 py-4 text-base font-semibold text-white transition hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
-          Email Me
-        </a>
-      </section>
+        <section id="contact" aria-labelledby="contact-heading" class="lg:col-span-1">
+          <div class="rounded-3xl border border-white/40 bg-white/70 p-8 shadow-lg shadow-blue-950/5 backdrop-blur-xl dark:border-slate-800/60 dark:bg-slate-900/70 sm:p-10 lg:sticky lg:top-24">
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">Let’s Connect</p>
+            <h2 id="contact-heading" class="mt-3 text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-100 sm:text-4xl">
+              Get in Touch
+            </h2>
+            <p class="mt-6 text-lg leading-8 text-slate-700 dark:text-slate-300">
+              Interested in working together or have any questions? Feel free to reach out!
+            </p>
+            <a href="mailto:chirag@example.com" class="mt-8 inline-flex items-center rounded-full bg-blue-600 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-blue-600/30 transition hover:-translate-y-0.5 hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-600/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
+              Email Me
+            </a>
+          </div>
+        </section>
+      </div>
     </div>
   </main>
 
