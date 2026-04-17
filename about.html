@@ -53,7 +53,6 @@
         navToggle.setAttribute('aria-expanded', !expanded);
         primaryNav.classList.toggle('hidden');
       });
-      // Dark mode toggle
       const darkModeToggle = document.getElementById('dark-mode-toggle');
       const darkIcon = document.getElementById('dark-icon');
       const lightIcon = document.getElementById('light-icon');
@@ -80,46 +79,54 @@
     </script>
   </header>
 
-  <main class="flex-grow container mx-auto px-6 py-16 max-w-5xl">
-    <section id="about" aria-labelledby="about-heading" class="mb-16">
-      <h1 id="about-heading" class="text-5xl font-extrabold leading-tight text-slate-900 dark:text-slate-100 mb-8 tracking-tight">About Me</h1>
-      <div class="prose prose-slate max-w-none text-lg text-gray-700 dark:text-gray-300">
-        <p>
-          Hello! I'm Chirag Dodiya, a Senior Software Engineer passionate about building impactful and scalable web applications.
-          With years of experience in full-stack development, I specialize in creating clean, efficient, and user-centric solutions that drive business value.
-        </p>
-        <p>
-          My approach combines technical excellence with thoughtful design to deliver products that users love. I'm particularly interested in performance optimization, accessibility, and creating maintainable codebases.
-        </p>
-      </div>
-    </section>
+  <main class="flex-grow">
+    <div class="mx-auto w-full max-w-[1600px] px-4 py-16 sm:px-6 lg:px-8">
+      <section id="about" aria-labelledby="about-heading" class="mb-16">
+        <h1 id="about-heading" class="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl">
+          About Me
+        </h1>
+        <div class="mt-6 max-w-3xl space-y-4 text-lg leading-8 text-slate-700 dark:text-slate-300 sm:text-xl">
+          <p>
+            Hello! I'm Chirag Dodiya, a Senior Software Engineer passionate about building impactful and scalable web applications.
+            With years of experience in full-stack development, I specialize in creating clean, efficient, and user-centric solutions that drive business value.
+          </p>
+          <p>
+            My approach combines technical excellence with thoughtful design to deliver products that users love. I'm particularly interested in performance optimization, accessibility, and creating maintainable codebases.
+          </p>
+        </div>
+      </section>
 
-    <section id="skills" aria-labelledby="skills-heading" class="mb-16">
-      <h2 id="skills-heading" class="text-3xl font-semibold text-slate-900 dark:text-slate-100 mb-8 tracking-wide">Skills</h2>
-      <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-3 text-lg">
-        <li>JavaScript (ES6+), TypeScript</li>
-        <li>React.js, Next.js</li>
-        <li>Node.js, Express</li>
-        <li>RESTful APIs & GraphQL</li>
-        <li>Tailwind CSS & Responsive Design</li>
-        <li>Unit Testing & TDD</li>
-        <li>CI/CD & DevOps Basics</li>
-      </ul>
-    </section>
+      <section id="skills" aria-labelledby="skills-heading" class="mb-16">
+        <h2 id="skills-heading" class="text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-100 sm:text-4xl">
+          Skills
+        </h2>
+        <ul class="mt-6 grid gap-4 text-lg leading-8 text-slate-700 dark:text-slate-300 sm:grid-cols-2">
+          <li>JavaScript (ES6+), TypeScript</li>
+          <li>React.js, Next.js</li>
+          <li>Node.js, Express</li>
+          <li>RESTful APIs & GraphQL</li>
+          <li>Tailwind CSS & Responsive Design</li>
+          <li>Unit Testing & TDD</li>
+          <li>CI/CD & DevOps Basics</li>
+        </ul>
+      </section>
 
-    <section id="contact" aria-labelledby="contact-heading" class="mb-8">
-      <h2 id="contact-heading" class="text-3xl font-semibold text-slate-900 dark:text-slate-100 mb-6 tracking-wide">Get in Touch</h2>
-      <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
-        Interested in working together or have any questions? Feel free to reach out!
-      </p>
-      <a href="mailto:chirag@example.com" class="inline-block rounded bg-blue-600 px-8 py-4 text-white font-semibold transition hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
-        Email Me
-      </a>
-    </section>
+      <section id="contact" aria-labelledby="contact-heading" class="mb-8">
+        <h2 id="contact-heading" class="text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-100 sm:text-4xl">
+          Get in Touch
+        </h2>
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-700 dark:text-slate-300 sm:text-xl">
+          Interested in working together or have any questions? Feel free to reach out!
+        </p>
+        <a href="mailto:chirag@example.com" class="mt-8 inline-flex items-center rounded-full bg-blue-600 px-8 py-4 text-base font-semibold text-white transition hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
+          Email Me
+        </a>
+      </section>
+    </div>
   </main>
 
-  <footer class="mt-auto border-t border-white/20 bg-white/70 backdrop-blur-xl dark:border-slate-800/60 dark:bg-slate-950/70 py-6">
-    <div class="container mx-auto px-6 text-center text-sm text-gray-600 dark:text-gray-400">
+  <footer class="mt-auto border-t border-white/20 bg-white/70 py-6 backdrop-blur-xl dark:border-slate-800/60 dark:bg-slate-950/70">
+    <div class="mx-auto w-full max-w-[1600px] px-4 text-center text-sm text-gray-600 dark:text-gray-400 sm:px-6">
       &copy; 2024 Chirag Dodiya. All rights reserved.
     </div>
   </footer>
